@@ -1,0 +1,25 @@
+//initial declaration with early string assignments
+let adjective, noun, verb, place, adjective2, noun2;
+verb = "run";
+place = "community park"
+adjective = "scenic"
+adjective2 = "energetic"
+noun = "Drake"
+noun2 = "Dogs"
+
+//assigning template to firstStory variable
+let firstStory = "Once upon a time, there was a(n) " + adjective + " " + noun + " who loved to eat " + noun2 + ". The " + noun + " lived in a " + place +" and had " + adjective2 + " nostrils that blew fire when it was " + verb + ".";
+
+console.log("First story: " + firstStory);
+
+//assign new strings to variables after learning premise of template
+verb = "Talking";
+place = "Mount Everest"
+adjective = "Malicious"
+adjective2 = "Enormous"
+noun = "Dragon"
+noun2 = "Horses"
+
+let secondStory = "Once upon a time, there was a(n) " + adjective + " " + noun + " who loved to eat " + noun2 + ". The " + noun + " lived in a " + place +" and had " + adjective2 + " nostrils that blew fire when it was " + verb + ".";
+
+console.log("Second story: " + secondStory);
