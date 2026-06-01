@@ -1,0 +1,18 @@
+console.log("Hello! I'm your coding fun fact guide!")
+
+let botName = 'Goliath';
+let botLocation = 'Virtual Web';
+let favoriteLanguage = 'JavaScript';
+console.log('My name is ' + botName + ' and I live on ' + botLocation + '.')
+console.log('My favorite programming language is ' + favoriteLanguage + '.');
+
+let codingFact = 'I prefer coding in ' + favoriteLanguage + ' over C++.';
+console.log(codingFact);
+
+codingFact = 'But sometimes I also prefer Python instead of ' + favoriteLanguage + '.';
+console.log(codingFact);
+
+codingFact = 'Which is why I like Python over ' + favoriteLanguage + ' and ' + favoriteLanguage + ' over C++.';
+console.log(codingFact);
+
+console.log('It was fun sharing these facts with you. Goodbye! - ' + botName + ' from ' + botLocation + '.');
