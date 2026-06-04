@@ -1,0 +1,28 @@
+//debug notes
+let counter = 10;
+console.log(`Counter is currently ${counter}`);
+
+//adjusted counter from postfix notation to prefix notation
+let updatedCounter = ++counter;
+console.log(`Counter is now ${updatedCounter}`);
+
+let score = 8;
+console.log(`Score is currently ${score}`);
+
+//adjusted score from prefix to postfix notation
+let finalScore = score++;
+console.log(`Score is still ${finalScore}`);
+
+let coins = 3;
+console.log(`Coins is currently ${coins}`);
+
+//adjusted coins from postfix to prefix notation
+let updatedCoins = --coins;
+console.log(`Coins is now ${updatedCoins}`);
+
+let health = 7;
+console.log(`Health is currently ${health}`);
+
+//adjusted health from prefix to postfix notation
+let newHealth = health--;
+console.log(`Health is still ${newHealth}`);
