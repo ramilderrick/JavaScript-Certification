@@ -1,0 +1,31 @@
+//declaring 5 different potential fortunes with assigned separate strings
+const fortune1 = "You will be hungry again in one hour.";
+const fortune2 = "The fortune you seek is in another cookie.";
+const fortune3 = "Your finances will be a key to your financial future.";
+const fortune4 = "If you can read this you are not illiterate.";
+const fortune5 = "Yesterday is history, tomorrow is a mystery, but today is a gift. That is why it is called the present.";
+
+
+//generating a random number between 1 and 5, inclusive.
+const randomNumber = Math.floor(Math.random() * (5) + 1);
+//console.log(randomNumber);
+
+
+let selectedFortune = "";
+
+//assigning user's fortune based on randomNumber
+if(randomNumber == 1) {
+  selectedFortune = fortune1;
+} else if (randomNumber == 2) {
+  selectedFortune = fortune2;
+} else if (randomNumber == 3) {
+  selectedFortune = fortune3;
+} else if (randomNumber == 4) {
+  selectedFortune = fortune4;
+} else if (randomNumber == 5) {
+  selectedFortune = fortune5;
+} else {
+  selectedFortune = "No fortune."
+}
+
+console.log(selectedFortune);
