@@ -1,0 +1,29 @@
+// this function is intended to mask a specific number of the characters that are part of an email arg
+
+const maskEmail = (email) => {
+  const stop = '@';
+  const ast = '*'
+  // we are collecting two substrings and utilize the @ to split the arguments into two workable strings
+  const subString = email.substring(0, email.indexOf(stop));
+  const subString2 = email.substring(email.indexOf(stop));
+  
+  // we minus 2 because we do not censor the first and last character prior to the @
+  const count = subString.length - 2;
+  const replacement = ast.repeat(count)
+
+  let result = email[0] + replacement + subString[1 + count] + subString2;
+
+  return result;
+}
+
+//running through various examples
+let email = "myEmail@email.com";
+let email2 = "freecodecamp@example.com";
+let email3 = "info@test.dev";
+let email4 = "user@domain.org";
+let email5 = "derrickmangahas@gmail.com"
+console.log(maskEmail(email));
+console.log(maskEmail(email2));
+console.log(maskEmail(email3));
+console.log(maskEmail(email4));
+console.log(maskEmail(email5));
