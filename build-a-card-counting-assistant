@@ -1,0 +1,62 @@
+//global count var
+let count = 0;
+
+//function that uses switch statements to check the input argument whether it be a string or number & adjusts count based on it
+const cardCounter = (card) => {
+  switch (card) {
+    case "A":
+      count -=1;
+      break;
+    case 2:
+      count +=1;
+      break;
+    case 3:
+      count +=1;
+      break;
+    case 4:
+      count +=1;
+      break;
+    case 5:
+      count +=1;
+      break;
+    case 6:
+      count +=1;
+      break;
+    case 7:
+      count +=0;
+      break;
+    case 8:
+      count +=0;
+      break;
+    case 9:
+      count +=0;
+      break;
+    case 10:
+      count -=1;
+      break;
+    case "J":
+      count -=1;
+      break;
+    case "Q":
+      count -=1;
+      break;
+    case "K":
+      count -=1;
+      break;
+  }
+
+  //assigns whether the player should bet or hold if count is positive or negative or 0
+  let decision = "";
+  if (count > 0) {
+    decision = "Bet"
+  } else {
+    decision = "Hold"
+  }
+  
+  let result = `${count} ${decision}`
+  return result;
+}
+
+console.log(cardCounter(2))
+console.log(cardCounter(9))
+console.log(cardCounter("K"))
