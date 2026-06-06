@@ -1,0 +1,8 @@
+// an application that converts the temperature from celsius to fahrenheit
+
+const convertCtoF = (arg) => {
+  let result = arg * (9/5) + 32;
+  return result;
+}
+
+console.log(convertCtoF(100))
