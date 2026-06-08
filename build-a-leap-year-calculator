@@ -1,0 +1,32 @@
+//global variables
+let year = 0;
+let result = "";
+
+//function that logic checks if year entered is a leap year or not.
+const isLeapYear = (year) => {
+  if (year % 400 === 0){
+    result = `${year} is a leap year.`;
+  } else if ((year % 100 === 0) && (year % 400 !== 0)) {
+    result = `${year} is not a leap year.`
+  } else if ((year % 4=== 0)){
+    result = `${year} is a leap year.`;
+  } else {
+    result = `${year} is not a leap year.`
+  }
+  return result;
+}
+
+//testing year 2024
+year = 2024;
+result = isLeapYear(year);
+console.log(result);
+
+//testing year 2000
+year = 2000;
+result = isLeapYear(year);
+console.log(result);
+
+//testing year 1900
+year = 1900;
+result = isLeapYear(year);
+console.log(result);
