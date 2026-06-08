@@ -1,0 +1,37 @@
+let line = "";
+let num = 0;
+let result = "";
+
+//checks if the length of the string that is entered as an argument is more than entered num
+const truncateString = (line, num) => {
+  if (line.length > num){
+    const dumb = line.substring(0, num);
+    return `${dumb}...`;
+  } else {
+    return line;
+  }
+}
+
+//example 1
+line = "A-tisket a-tasket A green and yellow basket";
+num = 8;
+result = truncateString(line, num)
+console.log(result)
+
+//example 2
+line = "A-tisket a-tasket A green and yellow basket";
+num = line.length;
+result = truncateString(line, num)
+console.log(result)
+
+//example 3
+line = "A-tisket a-tasket A green and yellow basket";
+num = line.length + 2;
+result = truncateString(line, num)
+console.log(result)
+
+//example 4
+line = "Absolutely Longer";
+num = 2;
+result = truncateString(line, num)
+console.log(result)
