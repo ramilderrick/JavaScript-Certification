@@ -1,0 +1,82 @@
+//global var
+const lunches = [];
+
+//function that adds string input to end of array
+const addLunchToEnd = (array, strInput) => {
+  let updatedArr = array.push(strInput);;
+  //updatedArr = array.push(strInput);
+  console.log(`${strInput} added to the end of the lunch menu.`);
+  return array;
+}
+
+console.log(addLunchToEnd(lunches, "Apples"));
+console.log(addLunchToEnd(lunches, "Cheeseburger"));
+
+//function that adds string input to beginning of array
+const addLunchToStart = (array, strInput) => {
+  let updatedArr = array.unshift(strInput);;
+  //updatedArr = array.push(strInput);
+  console.log(`${strInput} added to the start of the lunch menu.`);
+  return array;
+}
+
+console.log(addLunchToStart(lunches, "Bacon"));
+
+//function that checks if array is not empty then removes last lunch item if it is not empty.
+const removeLastLunch = (array) => {
+
+  if(array.length === 0) {
+    console.log("No lunches to remove.")
+  } else {
+    let updatedArr = array.pop();
+    console.log(`${updatedArr} removed from the end of the lunch menu.`);
+  }
+  return array;
+}
+
+console.log(removeLastLunch(lunches));
+
+//function that checks if array is not empty then removes first lunch item if it is not empty.
+const removeFirstLunch = (array) => {
+  
+  if(array.length === 0) {
+    console.log("No lunches to remove.")
+  } else {
+    let updatedArr = array.shift();
+    console.log(`${updatedArr} removed from the start of the lunch menu.`);
+  }
+  return array;
+}
+
+const testCase = ["Salad", "Eggs", "Cheese"];
+console.log(removeFirstLunch(testCase
+));
+
+//randomly chooses menu item from array
+const getRandomLunch = (array) => {
+
+  if(array.length === 0) {
+    console.log("No lunches available.")
+  } else {
+    let num = array.length;
+    let num2 = Math.floor(Math.random() * (num));
+    let updatedArr = array[num2];
+    console.log(`Randomly selected lunch: ${updatedArr}`);
+  }
+  return array;
+}
+
+console.log(getRandomLunch(lunches));
+
+//function that utilizes the join method to showcase the lunch menu.
+const showLunchMenu = (array) => {
+  
+  if (array.length === 0) {
+    console.log("The menu is empty.");
+  } else {
+    console.log("Menu items: " + array.join(", "));
+  }
+  return array;
+}
+
+console.log(showLunchMenu(lunches));
