@@ -1,0 +1,28 @@
+const names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home!"];
+
+//this function calculates the par and strokes to their nickname, depending on a persons number of strokes
+const golfScore = (parForCourse, strokes) => {
+
+  if(strokes == 1){
+    return "Hole-in-one!";
+  } else if (strokes <= parForCourse - 2){
+    return "Eagle";
+  } else if (strokes == parForCourse - 1) {
+    return "Birdie";
+  } else if (strokes == parForCourse) {
+    return "Par";
+  } else if (strokes == parForCourse + 1) {
+    return "Bogey";
+  } else if (strokes == parForCourse + 2) {
+    return "Double Bogey";
+  } else {
+    return "Go Home!"
+  }
+}
+
+//testing out various different cases
+console.log(golfScore(3, 2));
+console.log(golfScore(4, 2));
+console.log(golfScore(4, 6));
+console.log(golfScore(4, 5));
+console.log(golfScore(3, 7));
