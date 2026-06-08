@@ -1,0 +1,55 @@
+//this function splits the string into a substring and checks if the later half includes the check input case.
+const confirmEnding = (strInput, strCheck) => {
+  console.log(strInput.length)
+  let subString;
+
+  //made it so that strings with smaller/longer length characters are divided by lower numbers. While strings with medium length are divided by a larger number.
+  if (strInput.length < 7) {
+    const threeFourth = Math.round(strInput.length/1.5);
+    subString = strInput.substring(threeFourth)
+    console.log(subString)
+    subString = subString.includes(strCheck);
+  } else if ((strInput.length >= 7) && (strInput.length <= 50)) {
+    const oneThird = Math.round(strInput.length/3);
+    subString = strInput.substring(oneThird)
+    console.log(subString)
+    subString = subString.includes(strCheck);
+  } else {
+    const divisable = Math.round(strInput.length/1.2);
+    subString = strInput.substring(divisable)
+    console.log(subString)
+    subString = subString.includes(strCheck);
+  }
+
+  if(subString === true){
+    return true;
+  } else {
+    return false;
+  }
+  
+  
+}
+
+//test case 1
+let testCase = confirmEnding("Bastian", "n")
+console.log(testCase)
+
+//test case 2
+testCase = confirmEnding("Congratulation", "on")
+console.log(testCase)
+
+//test case 3
+testCase = confirmEnding("github", "b")
+console.log(testCase)
+
+//test case 4
+testCase = confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification")
+console.log(testCase)
+
+//test case 5
+testCase = confirmEnding("Connor", "n")
+console.log(testCase)
+
+//test case 6
+testCase = confirmEnding("Abstraction", "action")
+console.log(testCase)
