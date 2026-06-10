@@ -1,0 +1,87 @@
+//carge object that is currently set to temporary properties
+const cargo = {
+  containerId: 1,
+  destination: "location",
+  weight: 101,
+  unit: "kg",
+  hazmat: false
+};
+
+//function that normalizes the units to fit our parameters
+const normalizeUnits = (manifest) => {
+  if (manifest.unit !== "kg"){
+    const updatedManifest = { ...manifest, weight: manifest.weight * 0.45, unit: "kg"}
+    return updatedManifest;
+  } else {
+    return {...manifest};
+  }
+};
+
+console.log(normalizeUnits(cargo));
+
+//this function is intended to return an empty object if there are no missing or invalid properties
+const validateManifest = (manifest) => {
+  const manifestValidation = {};
+  const validUnits = ["kg", "lb"];
+
+  if (!manifest.hasOwnProperty("containerId")){
+    manifestValidation.containerId = "Missing";
+  } else if (typeof manifest.containerId != "number" || (manifest.containerId <= 0) || (!Number.isInteger(manifest.containerId))){
+    manifestValidation.containerId = "Invalid";
+  }
+
+  if (!manifest.hasOwnProperty("destination")){
+    manifestValidation.destination = "Missing";
+  } else if ((typeof manifest.destination != "string") || (!manifest.destination.trim())){
+    manifestValidation.destination = "Invalid";
+  }
+
+  if (!manifest.hasOwnProperty("weight")){
+    manifestValidation.weight = "Missing";
+  } else if ((typeof manifest.weight !== "number") || (manifest.weight <= 0) || (Number.isNaN(manifest.weight))){
+    manifestValidation.weight = "Invalid";
+  }
+
+  if (!manifest.hasOwnProperty("unit")){
+    manifestValidation.unit = "Missing";
+  } else if (typeof manifest.unit != "string" || (!validUnits.includes(manifest.unit))){
+    manifestValidation.unit = "Invalid";
+  }
+
+  if (!manifest.hasOwnProperty("hazmat")){
+    manifestValidation.hazmat = "Missing";
+  } else if (typeof manifest.hazmat != "boolean"){
+    manifestValidation.hazmat = "Invalid";
+  }
+
+  return manifestValidation;
+};
+
+//testing cases for validateManifest function
+
+console.log(validateManifest({ containerId: 1, destination: "Santa Cruz", weight: 304, unit: "kg", hazmat: false }));
+
+console.log(validateManifest({ containerId: 0, destination: 405, weight: -84, unit: "pounds", hazmat: "no" }));
+
+console.log(validateManifest({ containerId: 1, destination: "Santa Cruz", weight: 304, unit: "kg", hazmat: false }));
+
+console.log(validateManifest({ weight: NaN}))
+
+//checks if manifest object is valid and if so outputs its containerId and converts its weight to kg if needed. Meanwhile it also indicates if the object is invalid and outputs the problem properties.
+const processManifest = (manifest) => {
+  const validCase = validateManifest(manifest);
+
+  if (Object.keys(validCase).length === 0) {
+    console.log(`Validation success: ${manifest.containerId}`);
+    let conversion = normalizeUnits(manifest);
+    console.log(`Total weight: ${conversion.weight} kg`);
+  } else if (Object.keys(validCase).length !== 0){
+    console.log(`Validation error: ${manifest.containerId}`);
+    console.log(validateManifest(manifest));
+  } 
+};
+
+//process manifest function test cases
+console.log(processManifest({ containerId: 55, destination: "Carmel", weight: 400, unit: "lb", hazmat: false }));
+
+console.log(processManifest({ containerId: -88, destination: "Soledad", weight: NaN }))
