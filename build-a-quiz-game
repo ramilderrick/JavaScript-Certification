@@ -1,0 +1,68 @@
+const questions = [];
+
+const item1 = { 
+  category: "Math", 
+  question: "What are the first 3 digits of pi?", 
+  choices: ["3.19", "3.13", "3.14"], answer: "3.14"
+};
+
+questions.push(item1);
+
+const item2 = { 
+  category: "Basketball", 
+  question: "Who is the Greatest Basketball player of all time?", 
+  choices: ["Kobe Bryant", "Michael Jordan", "Lebron James"], answer: "Lebron James"
+};
+
+questions.push(item2);
+
+const item3 = { 
+  category: "Math", 
+  question: "If a runner ran 5km how far did he run in miles?", 
+  choices: ["5 miles", "4 miles", "3 miles"], answer: "3 miles"
+};
+
+questions.push(item3);
+
+const item4 = { 
+  category: "Japanese", 
+  question: "What is the word for the color white in Japanese?", 
+  choices: ["shiro", "shiroi", "akai"], answer: "shiroi"
+};
+
+questions.push(item4);
+
+const item5 = { 
+  category: "Food", 
+  question: "What is the most important ingredient for a sandwhich?", 
+  choices: ["Bread", "Meat", "Vegetables"], answer: "Bread"
+};
+
+questions.push(item5);
+
+console.log(questions);
+
+//a function that takes the list of random question and returns a random question object
+const getRandomQuestion = (array) => {
+  const randomNumber = Math.floor(Math.random() * array.length);
+  const result = array[randomNumber];
+  return result;
+}
+
+console.log(getRandomQuestion(questions));
+
+//a function that takes an array of available choices and uses random to make the computer's choice out of the selection.
+const getRandomComputerChoice = (choicesArray) => {
+  const randomChoice = Math.floor(Math.random() * choicesArray.length);
+  const choice = choicesArray[randomChoice];
+  return choice;
+}
+
+//in this function we make a check to see if the computer's choice is equivalent to the question's answer.
+const getResults = (questionObject, computerChoice) => {
+  if (questionObject.answer === computerChoice) {
+    return "The computer's choice is correct!";
+  } else {
+    return `The computer's choice is wrong. The correct answer is: ${questionObject.answer}`;
+  }
+}
