@@ -1,0 +1,25 @@
+//starting num
+let num = 10;
+
+//function that computes factorial of input
+const factorialCalculator = (number) => {
+  let list = []
+  //making a list of all numbers within the factorial
+  for (let i = number; i > 0; i--){
+    list.push(i);
+  }
+
+  let result = 1;
+  for (let j = 0; j < list.length; j++){
+    result *= list[j];
+  }
+  return result;
+  
+}
+
+//calling function with our num variable
+const factorial = factorialCalculator(num);
+
+const resultMsg = `Factorial of ${num} is ${factorial}`;
+
+console.log(resultMsg);
