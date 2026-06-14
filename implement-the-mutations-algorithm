@@ -1,0 +1,19 @@
+// a function that checks if the first string element contains all characters in the second string element
+const mutation = (array) => {
+  const target = array[0].toLowerCase();
+  const test = array[1].toLowerCase();
+  
+  const result = test.split('').every((char) => target.includes(char))
+  
+  return result;
+
+}
+
+//test cases
+console.log(mutation(["hello", "Hello"]));
+
+console.log(mutation(["CHEESERBURGER", "BACON"]));
+
+console.log(mutation(["MAGICTHEGATHERING", "magicTheGathering"]));
+
+console.log(mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]))
