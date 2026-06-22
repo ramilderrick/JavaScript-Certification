@@ -1,0 +1,21 @@
+//a function that accepts an alphabetical ordered string and checks if theres any missing letter in the sequence, if there is it returns which letter is missing
+function fearNotLetter(string){
+  let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  const startIndex = alphabet.indexOf(string[0]);
+  
+  for (let i = 0; i < alphabet.length; i++){
+    if (string[i] !== alphabet[startIndex + i]){
+      return alphabet[startIndex + i];
+
+    }
+  }
+
+  return undefined
+}
+
+//testing implementation
+console.log(fearNotLetter("abce"));
+
+console.log(fearNotLetter("abcdefghjklmno"));
+
+console.log(fearNotLetter("abcdefghijklmnopqrstuvwxyz"));
