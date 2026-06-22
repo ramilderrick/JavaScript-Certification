@@ -1,0 +1,16 @@
+//implementing a function that repeats the input string by an input number without using the repeat method
+function repeatStringNumTimes(inpString, number){
+  let result = ''
+  //checks if input is a valid number
+  if(number <= 0){
+    return result;
+  }
+  for (let i = 0; i<number; i++){
+    result += inpString
+  }
+  return result;
+}
+
+console.log(repeatStringNumTimes("Marvel Rivals is my favorite game!", 6));
+
+console.log(repeatStringNumTimes("Testing invalid number", -1));
